@@ -31,7 +31,7 @@
 			page.base('/wp-rest-api');
 			page('/', index);
 			page('/:categorySlug', category);
-			page({ dispatch: false });
+			page();
 
 			function index() {
 				$.getJSON( wpAPI + 'posts', function(data) {
