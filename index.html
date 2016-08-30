@@ -12,7 +12,6 @@
 
 		<div id="content"></div>
 
-		<!--<script src="./app.js"></script>-->
 		<script type="text/javascript">
 			var wpAPI = 'http://wprest.jdillman.com/wp-json/wp/v2/';
 			var title = $('#title');
@@ -32,7 +31,7 @@
 			page.base('/wp-rest-api');
 			page('/', index);
 			page('/:categorySlug', category);
-			page();
+			page({ dispatch: false });
 
 			function index() {
 				$.getJSON( wpAPI + 'posts', function(data) {
